@@ -26,13 +26,19 @@ class MonsterType
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255, unique=true)
-     * @ORM\OneToMany(targetEntity="Monster", mappedBy="type")
      */
     private $name;
 
+    /**
+     * @var Monster[]
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Monster", mappedBy="type")
+     */
+    private $monsters;
 
-    public function __construct() {
-        $this->name = new ArrayCollection();
+    public function __construct()
+    {
+        $this->monsters = new ArrayCollection();
     }
 
     /**
@@ -68,5 +74,39 @@ class MonsterType
     {
         return $this->name;
     }
-}
 
+    /**
+     * Add monster.
+     *
+     * @param \AppBundle\Entity\Monster $monster
+     *
+     * @return MonsterType
+     */
+    public function addMonster(Monster $monster)
+    {
+        $this->monsters[] = $monster;
+        $monster->setType($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove monster.
+     *
+     * @param \AppBundle\Entity\Monster $monster
+     */
+    public function removeMonster(Monster $monster)
+    {
+        $this->monsters->removeElement($monster);
+    }
+
+    /**
+     * Get monsters.
+     *
+     * @return \Doctrine\Common\Collections\Collection|Monster[]
+     */
+    public function getMonsters()
+    {
+        return $this->monsters;
+    }
+}

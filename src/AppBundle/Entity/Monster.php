@@ -66,21 +66,6 @@ class Monster
     /**
      * @var int
      *
-     * @ORM\Column(name="type", type="integer")
-     */
-    private $type;
-
-    /**
-     * @var string
-     *
-     * @ORM\ManyToOne(targetEntity="MonsterType")
-     * @ORM\JoinColumn(name="type", referencedColumnName="id")
-     */
-    private $typeName;
-
-    /**
-     * @var int
-     *
      * @ORM\Column(name="defense", type="integer")
      */
     private $defense;
@@ -92,6 +77,12 @@ class Monster
      */
     private $skill;
 
+    /**
+     * @var MonsterType
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\MonsterType", inversedBy="monsters")
+     */
+    private $type;
 
     /**
      * Get id
@@ -249,30 +240,6 @@ class Monster
     }
 
     /**
-     * Set type
-     *
-     * @param integer $type
-     *
-     * @return Monster
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
      * Set defense
      *
      * @param integer $defense
@@ -319,5 +286,28 @@ class Monster
     {
         return $this->skill;
     }
-}
 
+    /**
+     * Set type.
+     *
+     * @param \AppBundle\Entity\MonsterType $type
+     *
+     * @return Monster
+     */
+    public function setType(MonsterType $type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type.
+     *
+     * @return \AppBundle\Entity\MonsterType
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+}
