@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace GameBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Monster
  *
  * @ORM\Table(name="monster")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\MonsterRepository")
+ * @ORM\Entity(repositoryClass="GameBundle\Repository\MonsterRepository")
  */
 class Monster
 {
@@ -80,7 +80,7 @@ class Monster
     /**
      * @var MonsterType
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\MonsterType", inversedBy="monsters")
+     * @ORM\ManyToOne(targetEntity="GameBundle\Entity\MonsterType", inversedBy="monsters")
      */
     private $type;
 
@@ -290,7 +290,7 @@ class Monster
     /**
      * Set type.
      *
-     * @param \AppBundle\Entity\MonsterType $type
+     * @param \GameBundle\Entity\MonsterType $type
      *
      * @return Monster
      */
@@ -304,7 +304,7 @@ class Monster
     /**
      * Get type.
      *
-     * @return \AppBundle\Entity\MonsterType
+     * @return \GameBundle\Entity\MonsterType
      */
     public function getType()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace GameBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * MonsterType
  *
  * @ORM\Table(name="monster_type")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\MonsterTypeRepository")
+ * @ORM\Entity(repositoryClass="GameBundle\Repository\MonsterTypeRepository")
  */
 class MonsterType
 {
@@ -32,7 +32,7 @@ class MonsterType
     /**
      * @var Monster[]
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Monster", mappedBy="type")
+     * @ORM\OneToMany(targetEntity="GameBundle\Entity\Monster", mappedBy="type")
      */
     private $monsters;
 
@@ -78,7 +78,7 @@ class MonsterType
     /**
      * Add monster.
      *
-     * @param \AppBundle\Entity\Monster $monster
+     * @param \GameBundle\Entity\Monster $monster
      *
      * @return MonsterType
      */
@@ -93,7 +93,7 @@ class MonsterType
     /**
      * Remove monster.
      *
-     * @param \AppBundle\Entity\Monster $monster
+     * @param \GameBundle\Entity\Monster $monster
      */
     public function removeMonster(Monster $monster)
     {
