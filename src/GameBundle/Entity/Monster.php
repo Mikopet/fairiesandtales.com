@@ -80,9 +80,10 @@ class Monster
     /**
      * @var MonsterType
      *
-     * @ORM\ManyToOne(targetEntity="GameBundle\Entity\MonsterType", inversedBy="monsters")
+     * @ORM\ManyToOne(targetEntity="MonsterType", fetch="EXTRA_LAZY")
      */
     private $type;
+
 
     /**
      * Get id
@@ -290,7 +291,7 @@ class Monster
     /**
      * Set type.
      *
-     * @param \GameBundle\Entity\MonsterType $type
+     * @param MonsterType $type
      *
      * @return Monster
      */
@@ -304,7 +305,7 @@ class Monster
     /**
      * Get type.
      *
-     * @return \GameBundle\Entity\MonsterType
+     * @return MonsterType
      */
     public function getType()
     {

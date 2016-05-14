@@ -29,17 +29,6 @@ class MonsterType
      */
     private $name;
 
-    /**
-     * @var Monster[]
-     *
-     * @ORM\OneToMany(targetEntity="GameBundle\Entity\Monster", mappedBy="type")
-     */
-    private $monsters;
-
-    public function __construct()
-    {
-        $this->monsters = new ArrayCollection();
-    }
 
     /**
      * Get id
@@ -73,40 +62,5 @@ class MonsterType
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Add monster.
-     *
-     * @param \GameBundle\Entity\Monster $monster
-     *
-     * @return MonsterType
-     */
-    public function addMonster(Monster $monster)
-    {
-        $this->monsters[] = $monster;
-        $monster->setType($this);
-
-        return $this;
-    }
-
-    /**
-     * Remove monster.
-     *
-     * @param \GameBundle\Entity\Monster $monster
-     */
-    public function removeMonster(Monster $monster)
-    {
-        $this->monsters->removeElement($monster);
-    }
-
-    /**
-     * Get monsters.
-     *
-     * @return \Doctrine\Common\Collections\Collection|Monster[]
-     */
-    public function getMonsters()
-    {
-        return $this->monsters;
     }
 }
