@@ -1,3 +1,12 @@
+#game_monster:
+#    resource: "@GameBundle/Controller/MonsterController.php"
+#    type:     annotation
+
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
 game:
     resource: "@GameBundle/Controller/"
     type:     annotation
@@ -11,3 +20,4 @@ web:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    prefix:   /

@@ -1,28 +1,9 @@
-<html>
-<head>
-<style>
-html {
-    padding: 20px;
-    background: black;
-    color: white;
-    font-size: 4em;
-    text-align: center;
-    text-transform: uppercase;
-}
-div { 
-  background: url({{ asset('img/bg.jpg') }}) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  height: 90%;
-}
-</style>
-</head>
-<body>
-<div></div>
+{% extends 'WebBundle:Default:base.html.twig' %}
 
-In development
-</body>
-</html>
+{% block content %}
+      <div class="jumbotron">
+        <h1>In development</h1>
+        <p class="lead">Look in later ;)</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Learn more</a></p>
+      </div>
+{% endblock %}
