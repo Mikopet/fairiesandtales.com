@@ -1,5 +1,5 @@
 parameters:
     database_driver:    pdo_pgsql
-    database_name:      travis
+    database_name:      travis_ci_test
     database_user:      travis
     database_password:  ~
