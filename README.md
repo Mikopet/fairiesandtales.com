@@ -1,4 +1,4 @@
-Fairies & Tales
+Fairies & Tales [![Build Status](https://travis-ci.com/Mikopet/fairiesandtales.com.svg?token=k79tkesPyEyn4V1HxT9E&branch=travis)](https://travis-ci.com/Mikopet/fairiesandtales.com)
 ===================
 ## online turn-based RPG game on browser / mobile 
 
