@@ -1,0 +1,4 @@
+parameters:
+    database_driver:    pdo_pgsql
+    database_user:      travis
+    database_password:  ~
